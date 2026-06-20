@@ -4,7 +4,8 @@
   "description": "Portfolio backend API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",

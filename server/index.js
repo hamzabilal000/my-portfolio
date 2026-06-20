@@ -9,16 +9,17 @@ const { c_router } = require("./routes/contact.route")
 let app = express()
 
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: process.env.CLIENT_URL ? process.env.CLIENT_URL.split(",") : ["http://localhost:5173", "http://localhost:5174"],
     credentials: true
 }))
 app.use(express.json())
 app.use(cookieParser())
 
-mongoose.connect("mongodb://localhost:27017/portfolio").then(res => console.log("db connected"))
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/portfolio").then(() => console.log("db connected"))
 
 app.use('/c', c_router)
 
-app.listen(8080, () => {
-    console.log("Running")
+let PORT = process.env.PORT || 8080
+app.listen(PORT, () => {
+    console.log("Running on port", PORT)
 })
