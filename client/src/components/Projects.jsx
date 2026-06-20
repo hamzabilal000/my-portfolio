@@ -1,4 +1,4 @@
-import { FaGithub, FaExternalLinkAlt, FaLeaf, FaChartLine, FaDatabase, FaRobot, FaShieldAlt, FaBoxes, FaCalculator } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaLeaf, FaChartLine, FaDatabase, FaRobot, FaShieldAlt, FaBoxes, FaCalculator, FaLock } from 'react-icons/fa'
 import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss, SiPython, SiFastapi } from 'react-icons/si'
 
 function ProjectPreview({ project }) {
@@ -126,7 +126,8 @@ function Projects() {
             ],
             accentColor: 'text-green-400',
             borderAccent: 'hover:border-green-500/30',
-            github: 'https://github.com/hamzabilal000/greenvault',
+            github: null,
+            githubPrivate: true,
             live: '#',
         },
         {
@@ -153,6 +154,7 @@ function Projects() {
             accentColor: 'text-blue-400',
             borderAccent: 'hover:border-blue-500/30',
             github: 'https://github.com/hamzabilal000/psx-portfolio',
+            githubPrivate: false,
             live: '#',
         }
     ]
@@ -207,10 +209,21 @@ function Projects() {
                                     </div>
 
                                     <div className="flex flex-wrap gap-3 pt-2">
-                                        <a href={project.github} target="_blank" rel="noreferrer"
-                                            className="flex items-center gap-2 bg-secondary border border-theme-border-light hover:border-accent text-foreground px-5 sm:px-6 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5">
-                                            <FaGithub /> GitHub
-                                        </a>
+                                        {project.githubPrivate ? (
+                                            <div className="relative group/priv">
+                                                <div className="flex items-center gap-2 bg-secondary border border-theme-border-light text-muted-fg px-5 sm:px-6 py-2.5 rounded-full text-sm font-medium cursor-not-allowed select-none">
+                                                    <FaLock size={12} /> Private Repo
+                                                </div>
+                                                <div className="absolute bottom-full left-0 mb-2 w-52 bg-card border border-theme-border text-secondary-fg text-xs rounded-xl px-3 py-2 opacity-0 group-hover/priv:opacity-100 transition-opacity duration-200 pointer-events-none shadow-xl">
+                                                    Client project — source code is confidential
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <a href={project.github} target="_blank" rel="noreferrer"
+                                                className="flex items-center gap-2 bg-secondary border border-theme-border-light hover:border-accent text-foreground px-5 sm:px-6 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5">
+                                                <FaGithub /> GitHub
+                                            </a>
+                                        )}
                                         <a href={project.live} target="_blank" rel="noreferrer"
                                             className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-primary px-5 sm:px-6 py-2.5 rounded-full text-sm font-medium transition-all hover:-translate-y-0.5">
                                             <FaExternalLinkAlt size={12} /> Live Demo
