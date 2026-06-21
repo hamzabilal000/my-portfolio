@@ -7,14 +7,14 @@ function ProjectPreview({ project }) {
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-600/5 to-transparent" />
                 <div className="absolute inset-0 grid-bg opacity-20" />
-                <div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-12 sm:w-16 h-12 sm:h-16 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center animate-float">
-                    <FaLeaf className="text-green-400 text-xl sm:text-2xl" />
+                <div className="absolute top-6 left-6 w-16 h-16 rounded-2xl bg-green-500/10 border border-green-500/20 hidden sm:flex items-center justify-center animate-float">
+                    <FaLeaf className="text-green-400 text-2xl" />
                 </div>
-                <div className="absolute top-8 sm:top-12 right-6 sm:right-10 w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center animate-float-delay">
-                    <FaDatabase className="text-emerald-400 text-base sm:text-lg" />
+                <div className="absolute top-12 right-10 w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hidden sm:flex items-center justify-center animate-float-delay">
+                    <FaDatabase className="text-emerald-400 text-lg" />
                 </div>
-                <div className="absolute bottom-10 sm:bottom-16 left-6 sm:left-10 w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-green-400/10 border border-green-400/20 flex items-center justify-center animate-float-slow">
-                    <FaBoxes className="text-green-300 text-base sm:text-lg" />
+                <div className="absolute bottom-16 left-10 w-12 h-12 rounded-xl bg-green-400/10 border border-green-400/20 hidden sm:flex items-center justify-center animate-float-slow">
+                    <FaBoxes className="text-green-300 text-lg" />
                 </div>
                 <div className="relative z-10 w-[85%] max-w-xs">
                     <div className="bg-black/60 backdrop-blur-md rounded-xl border border-green-500/20 overflow-hidden shadow-2xl shadow-green-900/20">
@@ -54,13 +54,13 @@ function ProjectPreview({ project }) {
         <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-600/5 to-transparent" />
             <div className="absolute inset-0 grid-bg opacity-20" />
-            <div className="absolute top-6 sm:top-8 right-6 sm:right-8 w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center animate-float">
-                <FaChartLine className="text-blue-400 text-lg sm:text-xl" />
+            <div className="absolute top-8 right-8 w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 hidden sm:flex items-center justify-center animate-float">
+                <FaChartLine className="text-blue-400 text-xl" />
             </div>
-            <div className="absolute bottom-8 sm:bottom-12 right-8 sm:right-12 w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center animate-float-delay">
-                <FaShieldAlt className="text-purple-400 text-base sm:text-lg" />
+            <div className="absolute bottom-12 right-12 w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 hidden sm:flex items-center justify-center animate-float-delay">
+                <FaShieldAlt className="text-purple-400 text-lg" />
             </div>
-            <div className="absolute top-10 sm:top-14 left-6 sm:left-8 w-9 sm:w-11 h-9 sm:h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center animate-float-slow">
+            <div className="absolute top-14 left-8 w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 hidden sm:flex items-center justify-center animate-float-slow">
                 <FaCalculator className="text-indigo-400 text-sm" />
             </div>
             <div className="relative z-10 w-[85%] max-w-xs">
