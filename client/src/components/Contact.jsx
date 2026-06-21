@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa'
-import axios from 'axios'
-axios.defaults.withCredentials = true
+import emailjs from '@emailjs/browser'
 
 function ContactCard({ item }) {
     let inner = (
@@ -37,22 +36,24 @@ function Contact() {
     async function handleSubmit(e) {
         e.preventDefault()
         setLoading(true)
-        let obj = {
-            name: nameRef.current.value,
-            email: emailRef.current.value,
-            subject: subjectRef.current.value,
-            message: messageRef.current.value
-        }
         try {
-            let res = await axios.post(`${import.meta.env.VITE_API_URL}/c/send`, obj)
-            if (res.data.success == true) {
-                setSent(true)
-                nameRef.current.value = ''
-                emailRef.current.value = ''
-                subjectRef.current.value = ''
-                messageRef.current.value = ''
-                setTimeout(() => setSent(false), 3000)
-            }
+            await emailjs.send(
+                'service_qufcvfh',
+                'template_nsb9p2u',
+                {
+                    name: nameRef.current.value,
+                    email: emailRef.current.value,
+                    subject: subjectRef.current.value,
+                    message: messageRef.current.value,
+                },
+                '1HYQMIE8NI3eQYoCs'
+            )
+            setSent(true)
+            nameRef.current.value = ''
+            emailRef.current.value = ''
+            subjectRef.current.value = ''
+            messageRef.current.value = ''
+            setTimeout(() => setSent(false), 3000)
         } catch (error) {
             console.log(error)
             alert("Something went wrong. Please try again.")
