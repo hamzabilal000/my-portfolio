@@ -57,7 +57,7 @@ function Contact() {
             setTimeout(() => setSent(false), 3000)
         } catch (error) {
             console.log(error)
-            alert("Something went wrong. Please try again.")
+            alert("Error: " + (error?.text || error?.message || JSON.stringify(error)))
         }
         setLoading(false)
     }
