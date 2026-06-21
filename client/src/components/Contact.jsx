@@ -40,7 +40,7 @@ function Contact() {
         try {
             await emailjs.send(
                 'service_qufcvfh',
-                'template_nsb9p2u',
+                'template_xromtqf',
                 {
                     name: nameRef.current.value,
                     email: emailRef.current.value,
