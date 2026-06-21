@@ -4,7 +4,7 @@ import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss, SiPython, Si
 function ProjectPreview({ project }) {
     if (project.id === 'greenvault') {
         return (
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-600/5 to-transparent" />
                 <div className="absolute inset-0 grid-bg opacity-20" />
                 <div className="absolute top-4 sm:top-6 left-4 sm:left-6 w-12 sm:w-16 h-12 sm:h-16 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center animate-float">
@@ -51,7 +51,7 @@ function ProjectPreview({ project }) {
     }
 
     return (
-        <div className="relative w-full h-full flex items-center justify-center">
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-600/5 to-transparent" />
             <div className="absolute inset-0 grid-bg opacity-20" />
             <div className="absolute top-6 sm:top-8 right-6 sm:right-8 w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center animate-float">
