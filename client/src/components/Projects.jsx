@@ -45,7 +45,7 @@ function ProjectPreview({ project }) {
                         </div>
                     </div>
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-40 h-40 bg-green-500/8 rounded-full blur-[60px]" />
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-green-500/8 rounded-full blur-[60px]" />
             </div>
         )
     }
@@ -97,7 +97,7 @@ function ProjectPreview({ project }) {
                     </div>
                 </div>
             </div>
-            <div className="absolute -bottom-2 -left-2 w-40 h-40 bg-blue-500/8 rounded-full blur-[60px]" />
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/8 rounded-full blur-[60px]" />
         </div>
     )
 }
