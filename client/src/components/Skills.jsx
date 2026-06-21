@@ -81,7 +81,7 @@ function Skills() {
                         <div key={i} className={`glass rounded-2xl p-5 sm:p-6 card-hover relative overflow-hidden group border border-theme-border ${cat.borderHover} transition-all duration-300`}>
                             <div className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`} />
                             <div className="relative z-10">
-                                <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                                <div className="flex items-center justify-center sm:justify-start gap-3 mb-5 sm:mb-6">
                                     <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl border flex items-center justify-center text-sm ${cat.badge}`}>
                                         {cat.skills[0].icon}
                                     </div>
@@ -89,7 +89,7 @@ function Skills() {
                                 </div>
                                 <div className="space-y-3">
                                     {cat.skills.map((skill, j) => (
-                                        <div key={j} className="flex items-center gap-3 group/skill cursor-default">
+                                        <div key={j} className="flex items-center justify-center sm:justify-start gap-3 group/skill cursor-default">
                                             <span className={`${cat.iconColor} text-base flex-shrink-0 group-hover/skill:scale-125 transition-transform duration-300`}>{skill.icon}</span>
                                             <span className="text-secondary-fg group-hover/skill:text-foreground transition-colors duration-200 text-sm font-medium">{skill.name}</span>
                                         </div>
