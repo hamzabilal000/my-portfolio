@@ -155,7 +155,7 @@ function Projects() {
             borderAccent: 'hover:border-blue-500/30',
             github: 'https://github.com/hamzabilal000/psx-portfolio',
             githubPrivate: false,
-            live: '#',
+            live: 'https://psx-ai-advisor.vercel.app',
         }
     ]
 
