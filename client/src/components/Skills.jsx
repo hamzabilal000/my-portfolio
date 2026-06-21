@@ -87,9 +87,9 @@ function Skills() {
                                     </div>
                                     <h3 className={`${cat.iconColor} font-bold text-sm tracking-wide`}>{cat.title}</h3>
                                 </div>
-                                <div className="space-y-3">
+                                <div className="flex flex-col items-center sm:items-start gap-3">
                                     {cat.skills.map((skill, j) => (
-                                        <div key={j} className="flex items-center justify-center sm:justify-start gap-3 group/skill cursor-default">
+                                        <div key={j} className="flex items-center gap-3 group/skill cursor-default">
                                             <span className={`${cat.iconColor} text-base flex-shrink-0 group-hover/skill:scale-125 transition-transform duration-300`}>{skill.icon}</span>
                                             <span className="text-secondary-fg group-hover/skill:text-foreground transition-colors duration-200 text-sm font-medium">{skill.name}</span>
                                         </div>
