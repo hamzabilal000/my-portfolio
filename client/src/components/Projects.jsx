@@ -128,7 +128,7 @@ function Projects() {
             borderAccent: 'hover:border-green-500/30',
             github: null,
             githubPrivate: true,
-            live: '#',
+            live: 'https://my-portfolio-five-bice-99.vercel.app',
         },
         {
             id: 'psx',
