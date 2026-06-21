@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
+emailjs.init('1HYQMIE8NI3eQYoCs')
 
 function ContactCard({ item }) {
     let inner = (
