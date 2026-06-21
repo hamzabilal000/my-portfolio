@@ -100,7 +100,7 @@ function Navbar() {
                         <div className="relative w-10 h-10 rounded-xl bg-accent flex items-center justify-center transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/30 group-hover:scale-105">
                             <span className="text-white font-black text-sm tracking-tight">HB</span>
                         </div>
-                        <div className="hidden sm:block">
+                        <div className="block">
                             <div className="text-foreground font-bold text-base leading-tight">Hamza Bilal</div>
                             <div className="text-muted-fg text-[10px] font-medium tracking-wider uppercase">MERN + AI Engineer</div>
                         </div>
