@@ -4,25 +4,23 @@ import { SiFiverr } from 'react-icons/si'
 function ProfilePhoto() {
     return (
         <div className="relative flex items-center justify-center">
-            <div className="absolute -inset-6 bg-accent/8 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -inset-10 bg-accent/8 rounded-3xl blur-3xl pointer-events-none" />
 
             <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-br from-accent/40 via-accent/20 to-blue-500/20 rounded-full blur-sm" />
+                <div className="absolute -inset-1 bg-gradient-to-br from-accent/40 via-accent/20 to-blue-500/20 rounded-3xl blur-sm" />
 
-                <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-accent/30 shadow-2xl shadow-accent/10">
+                <div className="relative w-[280px] h-[370px] sm:w-[300px] sm:h-[400px] lg:w-[340px] lg:h-[450px] rounded-3xl overflow-hidden border-2 border-accent/30 shadow-2xl shadow-accent/10">
                     <img
                         src="/hamza.png"
                         alt="Hamza Bilal"
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover"
                     />
                 </div>
 
-                <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full shadow-[0_0_12px_4px_rgba(34,197,94,0.5)] animate-pulse" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_10px_3px_rgba(96,165,250,0.5)] animate-float" />
+                <div className="absolute -top-3 -right-3 w-5 h-5 bg-accent rounded-full shadow-[0_0_12px_4px_rgba(34,197,94,0.5)] animate-pulse" />
+                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_10px_3px_rgba(96,165,250,0.5)] animate-float" />
+                <div className="absolute top-1/2 -right-4 w-2.5 h-2.5 bg-purple-400 rounded-full shadow-[0_0_8px_3px_rgba(192,132,252,0.5)] animate-float-slow" />
             </div>
-
-            <div className="absolute w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] lg:w-[420px] lg:h-[420px] rounded-full border border-dashed border-accent/15"
-                style={{ animation: 'spin 20s linear infinite' }} />
         </div>
     )
 }
