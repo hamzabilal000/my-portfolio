@@ -9,17 +9,18 @@ function ProfilePhoto() {
             <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-br from-accent/40 via-accent/20 to-blue-500/20 rounded-3xl blur-sm" />
 
-                <div className="relative w-[280px] h-[370px] sm:w-[300px] sm:h-[400px] lg:w-[340px] lg:h-[450px] rounded-3xl overflow-hidden border-2 border-accent/30 shadow-2xl shadow-accent/10">
+                <div className="relative w-[260px] h-[320px] sm:w-[280px] sm:h-[350px] lg:w-[340px] lg:h-[420px] rounded-3xl overflow-hidden border-2 border-accent/30 shadow-2xl shadow-accent/10">
                     <img
                         src="/hamza.png"
                         alt="Hamza Bilal"
-                        className="w-full h-full object-cover object-bottom"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: 'center 30%' }}
                     />
                 </div>
 
-                <div className="absolute -top-3 -right-3 w-5 h-5 bg-accent rounded-full shadow-[0_0_12px_4px_rgba(34,197,94,0.5)] animate-pulse" />
-                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_10px_3px_rgba(96,165,250,0.5)] animate-float" />
-                <div className="absolute top-1/2 -right-4 w-2.5 h-2.5 bg-purple-400 rounded-full shadow-[0_0_8px_3px_rgba(192,132,252,0.5)] animate-float-slow" />
+                <div className="absolute -top-5 -right-6 w-5 h-5 bg-accent rounded-full shadow-[0_0_12px_4px_rgba(34,197,94,0.5)] animate-pulse" />
+                <div className="absolute -bottom-5 -left-6 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_10px_3px_rgba(96,165,250,0.5)] animate-float" />
+                <div className="absolute top-1/2 -right-8 w-2.5 h-2.5 bg-purple-400 rounded-full shadow-[0_0_8px_3px_rgba(192,132,252,0.5)] animate-float-slow" />
             </div>
         </div>
     )
@@ -43,7 +44,7 @@ function Hero() {
                 <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
                     {/* Left */}
-                    <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
+                    <div className="space-y-6 lg:space-y-8 order-1">
                         <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 animate-border-glow">
                             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                             <span className="text-accent text-xs sm:text-sm font-medium">Available for Opportunities</span>
@@ -100,7 +101,7 @@ function Hero() {
                     </div>
 
                     {/* Profile Photo */}
-                    <div className="order-1 lg:order-2 flex justify-center">
+                    <div className="order-2 flex justify-center">
                         <div className="scale-75 sm:scale-90 lg:scale-100">
                             <ProfilePhoto />
                         </div>
