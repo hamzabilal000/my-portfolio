@@ -13,7 +13,8 @@ function ProfilePhoto() {
                     <img
                         src="/hamza.png"
                         alt="Hamza Bilal"
-                        className="w-full h-full object-cover object-[center_20%]"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: 'center 20%' }}
                     />
                 </div>
 
