@@ -151,6 +151,12 @@ body {
 }
 .animate-mesh { animation: meshMove 10s ease-in-out infinite; }
 
+/* Spin */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 /* Fade up */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }

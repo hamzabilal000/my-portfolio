@@ -1,47 +1,28 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowRight } from 'react-icons/fa'
 import { SiFiverr } from 'react-icons/si'
 
-function CodeWindow() {
+function ProfilePhoto() {
     return (
-        <div className="relative">
-            <div className="absolute -inset-6 bg-accent/5 rounded-3xl blur-3xl pointer-events-none" />
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-[#30363d]">
-                <div className="flex items-center gap-2 px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
-                    <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                    </div>
-                    <span className="text-[#6e7681] text-xs font-mono ml-2">hamza-bilal.js</span>
-                    <div className="ml-auto flex items-center gap-1">
-                        <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                        <span className="text-[10px] text-accent font-mono">live</span>
-                    </div>
+        <div className="relative flex items-center justify-center">
+            <div className="absolute -inset-6 bg-accent/8 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-br from-accent/40 via-accent/20 to-blue-500/20 rounded-full blur-sm" />
+
+                <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-accent/30 shadow-2xl shadow-accent/10">
+                    <img
+                        src="/hamza.png"
+                        alt="Hamza Bilal"
+                        className="w-full h-full object-cover object-top"
+                    />
                 </div>
-                <div className="bg-[#0d1117] p-4 sm:p-6 font-mono text-xs sm:text-sm leading-7 sm:leading-8">
-                    <div className="text-[#8b949e] text-xs mb-3">// Full-Stack MERN + AI Developer</div>
-                    <div><span className="text-[#ff7b72]">const </span><span className="text-[#79c0ff]">developer</span><span className="text-[#c9d1d9]"> = {'{'}</span></div>
-                    <div className="ml-4 sm:ml-5"><span className="text-[#7ee787]">name</span><span className="text-[#c9d1d9]">: </span><span className="text-[#a5d6ff]">'Hamza Bilal'</span><span className="text-[#c9d1d9]">,</span></div>
-                    <div className="ml-4 sm:ml-5"><span className="text-[#7ee787]">role</span><span className="text-[#c9d1d9]">: </span><span className="text-[#a5d6ff]">'MERN + AI Engineer'</span><span className="text-[#c9d1d9]">,</span></div>
-                    <div className="ml-4 sm:ml-5"><span className="text-[#7ee787]">stack</span><span className="text-[#c9d1d9]">: [</span><span className="text-[#a5d6ff]">'React'</span><span className="text-[#c9d1d9]">, </span><span className="text-[#a5d6ff]">'Node.js'</span><span className="text-[#c9d1d9]">, </span><span className="text-[#a5d6ff]">'MongoDB'</span><span className="text-[#c9d1d9]">],</span></div>
-                    <div className="ml-4 sm:ml-5"><span className="text-[#7ee787]">ai</span><span className="text-[#c9d1d9]">: [</span><span className="text-[#a5d6ff]">'Python'</span><span className="text-[#c9d1d9]">, </span><span className="text-[#a5d6ff]">'FastAPI'</span><span className="text-[#c9d1d9]">, </span><span className="text-[#a5d6ff]">'NLP'</span><span className="text-[#c9d1d9]">],</span></div>
-                    <div className="ml-4 sm:ml-5"><span className="text-[#7ee787]">openToWork</span><span className="text-[#c9d1d9]">: </span><span className="text-[#79c0ff]">true</span><span className="text-[#c9d1d9]">,</span></div>
-                    <div className="text-[#c9d1d9]">{'}'}</div>
-                    <div className="mt-3 sm:mt-4 flex items-center gap-2 text-[#8b949e] text-xs">
-                        <span className="text-accent">▶</span>
-                        <span>Ready to ship your next big idea</span>
-                        <span className="cursor-blink text-accent">_</span>
-                    </div>
-                </div>
+
+                <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full shadow-[0_0_12px_4px_rgba(34,197,94,0.5)] animate-pulse" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_10px_3px_rgba(96,165,250,0.5)] animate-float" />
             </div>
-            <div className="grid grid-cols-3 gap-3 mt-4">
-                {[{ value: '5+', label: 'Projects' }, { value: '10+', label: 'Technologies' }, { value: 'MERN', label: 'Specialist' }].map((s, i) => (
-                    <div key={i} className="glass rounded-xl p-3 text-center border border-theme-border card-hover">
-                        <div className="text-accent font-bold text-sm sm:text-base">{s.value}</div>
-                        <div className="text-muted-fg text-[10px] sm:text-[11px] mt-0.5">{s.label}</div>
-                    </div>
-                ))}
-            </div>
+
+            <div className="absolute w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] lg:w-[420px] lg:h-[420px] rounded-full border border-dashed border-accent/15"
+                style={{ animation: 'spin 20s linear infinite' }} />
         </div>
     )
 }
@@ -64,7 +45,7 @@ function Hero() {
                 <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
                     {/* Left */}
-                    <div className="space-y-6 lg:space-y-8">
+                    <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
                         <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 animate-border-glow">
                             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                             <span className="text-accent text-xs sm:text-sm font-medium">Available for Opportunities</span>
@@ -120,20 +101,22 @@ function Hero() {
                         </div>
                     </div>
 
-                    {/* Code Window — tablet and up */}
-                    <div className="hidden md:block">
-                        <CodeWindow />
+                    {/* Profile Photo */}
+                    <div className="order-1 lg:order-2 flex justify-center">
+                        <div className="scale-75 sm:scale-90 lg:scale-100">
+                            <ProfilePhoto />
+                        </div>
                     </div>
+                </div>
 
-                    {/* Mobile stats */}
-                    <div className="grid grid-cols-3 gap-3 md:hidden">
-                        {[{ value: '5+', label: 'Projects' }, { value: '10+', label: 'Technologies' }, { value: 'MERN', label: 'Specialist' }].map((s, i) => (
-                            <div key={i} className="glass rounded-xl p-3 text-center border border-theme-border">
-                                <div className="text-lg font-bold text-accent">{s.value}</div>
-                                <div className="text-muted-fg text-[10px] mt-0.5">{s.label}</div>
-                            </div>
-                        ))}
-                    </div>
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-3 mt-10 lg:mt-14 max-w-lg mx-auto lg:max-w-none lg:mx-0">
+                    {[{ value: '5+', label: 'Projects' }, { value: '10+', label: 'Technologies' }, { value: 'MERN', label: 'Specialist' }].map((s, i) => (
+                        <div key={i} className="glass rounded-xl p-3 text-center border border-theme-border card-hover">
+                            <div className="text-accent font-bold text-sm sm:text-base">{s.value}</div>
+                            <div className="text-muted-fg text-[10px] sm:text-[11px] mt-0.5">{s.label}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
