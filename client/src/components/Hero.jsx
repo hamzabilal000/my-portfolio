@@ -13,7 +13,7 @@ function ProfilePhoto() {
                     <img
                         src="/hamza.png"
                         alt="Hamza Bilal"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-[center_20%]"
                     />
                 </div>
 
