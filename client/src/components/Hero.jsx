@@ -7,14 +7,12 @@ function ProfilePhoto() {
             <div className="absolute -inset-10 bg-accent/8 rounded-3xl blur-3xl pointer-events-none" />
 
             <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-br from-accent/40 via-accent/20 to-blue-500/20 rounded-3xl blur-sm" />
-
-                <div className="relative w-[260px] h-[320px] sm:w-[280px] sm:h-[350px] lg:w-[340px] lg:h-[420px] rounded-3xl overflow-hidden border-2 border-accent/30 shadow-2xl shadow-accent/10">
+                <div className="relative w-[260px] h-[320px] sm:w-[280px] sm:h-[350px] lg:w-[340px] lg:h-[420px] rounded-3xl overflow-hidden border border-accent/20 shadow-2xl shadow-accent/10">
                     <img
                         src="/hamza.png"
                         alt="Hamza Bilal"
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center 30%' }}
+                        style={{ objectPosition: 'center 15%' }}
                     />
                 </div>
 
