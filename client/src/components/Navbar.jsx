@@ -49,7 +49,7 @@ function Navbar() {
                     style={{ background: 'rgb(var(--bg-card) / 0.85)' }}>
 
                     {/* Logo — designed monogram lockup with live status */}
-                    <button onClick={() => scrollTo('home')} className="flex items-center gap-2.5 group flex-shrink-0">
+                    <button onClick={() => scrollTo('home')} className="flex items-center gap-2.5 group flex-shrink-0 min-h-[44px]">
                         <span className="relative w-9 h-9 rounded-[11px] flex items-center justify-center overflow-hidden shadow-md shadow-accent/25 group-hover:rotate-6 transition-transform duration-300"
                             style={{ background: 'linear-gradient(135deg, #f5471f 0%, #ff8a4d 50%, #5b4bf5 100%)' }}>
                             {/* glossy shine */}
@@ -79,11 +79,11 @@ function Navbar() {
                     {/* Actions */}
                     <div className="flex items-center gap-1.5 flex-shrink-0">
                         <button onClick={toggleTheme}
-                            className="w-9 h-9 rounded-full border border-theme-border hover:border-accent/50 flex items-center justify-center text-muted-fg hover:text-accent transition-all">
+                            className="w-11 h-11 sm:w-9 sm:h-9 rounded-full border border-theme-border hover:border-accent/50 flex items-center justify-center text-muted-fg hover:text-accent transition-all">
                             {theme === 'dark' ? <FaSun size={13} /> : <FaMoon size={13} />}
                         </button>
                         <button onClick={() => setMobileOpen(!mobileOpen)}
-                            className="md:hidden w-9 h-9 rounded-full border border-theme-border flex items-center justify-center text-foreground">
+                            className="md:hidden w-11 h-11 rounded-full border border-theme-border flex items-center justify-center text-foreground">
                             {mobileOpen ? <HiX size={17} /> : <HiMenuAlt3 size={17} />}
                         </button>
                     </div>

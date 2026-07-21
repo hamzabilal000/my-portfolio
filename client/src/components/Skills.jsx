@@ -21,8 +21,8 @@ function Skills() {
 
     return (
         <section id="skills" className="relative py-20 sm:py-28 overflow-hidden">
-            <Shape type="cube" size={56} c1="#5eead4" c2="#0d9488" className="animate-float left-[7%] top-40 hidden lg:block" rotate={10} />
-            <Shape type="pyramid" size={50} c1="#fb923c" c2="#ea580c" className="animate-float-slow right-[7%] top-28 hidden lg:block" rotate={-10} />
+            <Shape type="cube" size={56} c1="#5eead4" c2="#0d9488" className="absolute animate-float left-[7%] top-40 hidden lg:block" rotate={10} />
+            <Shape type="pyramid" size={50} c1="#fb923c" c2="#ea580c" className="absolute animate-float-slow right-[7%] top-28 hidden lg:block" rotate={-10} />
 
             <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-12 sm:mb-16">

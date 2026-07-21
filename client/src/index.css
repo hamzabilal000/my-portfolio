@@ -154,7 +154,9 @@ body {
 
 /* ===== 3D-ish floating shapes ===== */
 .shape {
-    position: absolute;
+    /* NOT absolute by default — Hero nests shapes inside positioned wrappers, and an
+       absolute child would collapse that wrapper to 0 width. Sections that place a
+       Shape directly pass `absolute` in its className instead. */
     pointer-events: none;
     filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.18));
     will-change: transform;

@@ -52,8 +52,8 @@ function Contact() {
 
     return (
         <section id="contact" className="relative py-20 sm:py-28 overflow-hidden">
-            <Shape type="sphere" size={70} c1="#fbbf24" c2="#d97706" className="animate-float-slow left-[6%] top-32 hidden lg:block" />
-            <Shape type="diamond" size={50} c1="#f472b6" c2="#db2777" className="animate-float right-[7%] bottom-28 hidden lg:block" />
+            <Shape type="sphere" size={70} c1="#fbbf24" c2="#d97706" className="absolute animate-float-slow left-[6%] top-32 hidden lg:block" />
+            <Shape type="diamond" size={50} c1="#f472b6" c2="#db2777" className="absolute animate-float right-[7%] bottom-28 hidden lg:block" />
 
             <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-12 sm:mb-16">

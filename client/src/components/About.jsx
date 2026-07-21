@@ -11,8 +11,8 @@ function About() {
 
     return (
         <section id="about" className="relative py-20 sm:py-28 overflow-hidden">
-            <Shape type="sphere" size={64} c1="#a78bfa" c2="#7c3aed" className="animate-float-slow left-[6%] top-24 hidden sm:block" />
-            <Shape type="diamond" size={48} c1="#f472b6" c2="#db2777" className="animate-float right-[8%] bottom-24 hidden sm:block" />
+            <Shape type="sphere" size={64} c1="#a78bfa" c2="#7c3aed" className="absolute animate-float-slow left-[6%] top-24 hidden sm:block" />
+            <Shape type="diamond" size={48} c1="#f472b6" c2="#db2777" className="absolute animate-float right-[8%] bottom-24 hidden sm:block" />
 
             <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
                 <span className="text-accent text-xs font-bold uppercase tracking-[0.2em]">About Me</span>

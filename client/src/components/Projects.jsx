@@ -63,8 +63,8 @@ function Projects() {
 
     return (
         <section id="projects" className="relative py-20 sm:py-28 overflow-hidden">
-            <Shape type="cyl" size={54} c1="#60a5fa" c2="#2563eb" className="animate-float-slow left-[6%] top-32 hidden lg:block" rotate={-8} />
-            <Shape type="star" size={60} c1="#fbbf24" c2="#d97706" className="animate-float right-[6%] bottom-40 hidden lg:block" />
+            <Shape type="cyl" size={54} c1="#60a5fa" c2="#2563eb" className="absolute animate-float-slow left-[6%] top-32 hidden lg:block" rotate={-8} />
+            <Shape type="star" size={60} c1="#fbbf24" c2="#d97706" className="absolute animate-float right-[6%] bottom-40 hidden lg:block" />
 
             <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-12 sm:mb-16">

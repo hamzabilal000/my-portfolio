@@ -85,7 +85,7 @@ function Footer() {
                                 { href: 'https://fiverr.com/hamzabilal000', icon: <SiFiverr size={15} /> },
                             ].map((s, i) => (
                                 <a key={i} href={s.href} target={s.href.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer"
-                                    className="w-9 h-9 rounded-full border border-theme-border hover:border-accent hover:bg-accent hover:text-white flex items-center justify-center text-muted-fg transition-all">
+                                    className="w-11 h-11 sm:w-10 sm:h-10 rounded-full border border-theme-border hover:border-accent hover:bg-accent hover:text-white flex items-center justify-center text-muted-fg transition-all">
                                     {s.icon}
                                 </a>
                             ))}
@@ -95,13 +95,13 @@ function Footer() {
                     {cols.map((col, i) => (
                         <div key={i}>
                             <div className="text-foreground font-bold text-sm mb-4">{col.title}</div>
-                            <div className="flex flex-col gap-2.5">
+                            <div className="flex flex-col gap-0.5 sm:gap-2">
                                 {col.links.map((l, j) => (
                                     l.href
                                         ? <a key={j} href={l.href} target={l.href.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer"
-                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left">{l.label}</a>
+                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left py-2.5 sm:py-0.5">{l.label}</a>
                                         : <button key={j} onClick={l.action}
-                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left">{l.label}</button>
+                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left py-2.5 sm:py-0.5">{l.label}</button>
                                 ))}
                             </div>
                         </div>
