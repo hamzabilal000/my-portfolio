@@ -2,8 +2,29 @@ import { useRef } from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 import Shape from './Shape'
 
+// One scrolling ticker track. Rendered twice (faint base + vivid spotlight copy)
+// with the same marquee animation so the two stay perfectly in sync.
+function TickerTrack({ textClass }) {
+    let size = 'text-[13vw] sm:text-[10vw] lg:text-[8vw] leading-none px-[2vw]'
+    return (
+        <div className="flex items-center whitespace-nowrap animate-marquee">
+            {[0, 1].map(g => (
+                <div key={g} className="flex items-center shrink-0">
+                    {[0, 1, 2, 3].map(i => (
+                        <span key={i} className="flex items-center">
+                            <span className={`${textClass} ${size}`}>HAMZA BILAL</span>
+                            <span className="text-accent/25 text-[3vw] px-[0.5vw]">✦</span>
+                        </span>
+                    ))}
+                </div>
+            ))}
+        </div>
+    )
+}
+
 function Hero() {
     let sceneRef = useRef(null)
+    let spotRef = useRef(null)
     let scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
     // Mouse-move parallax — each layer moves by depth * mouse offset
@@ -17,11 +38,19 @@ function Hero() {
             let d = parseFloat(el.dataset.depth)
             el.style.transform = `translate3d(${x * d * 60}px, ${y * d * 60}px, 0)`
         })
+        // spotlight that lights up the ticker letters under the cursor
+        let spot = spotRef.current
+        if (spot) {
+            spot.style.setProperty('--mx', `${e.clientX - rect.left}px`)
+            spot.style.setProperty('--my', `${e.clientY - rect.top}px`)
+            spot.style.opacity = '1'
+        }
     }
     let resetMouse = () => {
         let scene = sceneRef.current
         if (!scene) return
         scene.querySelectorAll('[data-depth]').forEach(el => { el.style.transform = '' })
+        if (spotRef.current) spotRef.current.style.opacity = '0'
     }
 
     return (
@@ -34,18 +63,14 @@ function Hero() {
             >
                 {/* Big ghost background name — continuous right-to-left ticker (stock-market style) */}
                 <div className="ticker-band absolute inset-0 flex items-center overflow-hidden pointer-events-none select-none" style={{ zIndex: 0 }}>
-                    <div className="flex items-center whitespace-nowrap animate-marquee">
-                        {[0, 1].map(g => (
-                            <div key={g} className="flex items-center shrink-0">
-                                {[0, 1, 2, 3].map(i => (
-                                    <span key={i} className="flex items-center">
-                                        <span className="ticker-name text-[13vw] sm:text-[10vw] lg:text-[8vw] leading-none px-[2vw]">HAMZA BILAL</span>
-                                        <span className="text-accent/25 text-[3vw] px-[0.5vw]">✦</span>
-                                    </span>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
+                    <TickerTrack textClass="ticker-name" />
+                </div>
+
+                {/* Same ticker in full colour, revealed only inside a spotlight that follows the cursor */}
+                <div ref={spotRef}
+                    className="ticker-spotlight absolute inset-0 flex items-center overflow-hidden pointer-events-none select-none"
+                    style={{ zIndex: 0 }}>
+                    <TickerTrack textClass="ticker-lit" />
                 </div>
 
                 {/* Floating shapes with parallax depth — all top-anchored so every one is

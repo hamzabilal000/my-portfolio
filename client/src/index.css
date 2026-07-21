@@ -253,6 +253,26 @@ body {
 }
 .animate-fade-up { animation: fadeUp 0.6s ease forwards; }
 
+/* ===== Hero ticker: cursor spotlight reveal on the scrolling letters ===== */
+.ticker-lit {
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: transparent;
+    background: linear-gradient(95deg, #f5471f 0%, #ff8a4d 30%, #a78bfa 65%, #5b4bf5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.ticker-spotlight {
+    --mx: 50%;
+    --my: 50%;
+    -webkit-mask-image: radial-gradient(circle 210px at var(--mx) var(--my),
+        #000 0%, rgba(0, 0, 0, 0.72) 42%, rgba(0, 0, 0, 0) 72%);
+    mask-image: radial-gradient(circle 210px at var(--mx) var(--my),
+        #000 0%, rgba(0, 0, 0, 0.72) 42%, rgba(0, 0, 0, 0) 72%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 /* ===== Footer name: cursor spotlight reveal ===== */
 .spotlight-name {
     --mx: 50%;
