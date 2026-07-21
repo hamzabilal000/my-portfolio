@@ -32,11 +32,19 @@ function Hero() {
                 onMouseLeave={resetMouse}
                 className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6"
             >
-                {/* Big ghost background name — split so the photo sits between two readable words */}
-                <div className="absolute inset-0 flex items-center pointer-events-none select-none" style={{ zIndex: 0 }}>
-                    <div data-depth="0.5" className="flex items-center justify-between w-full -mx-[6vw] transition-transform duration-300 ease-out">
-                        <span className="ghost-text animate-name-drift text-[15vw] sm:text-[14vw] lg:text-[13vw] leading-none">HAMZA</span>
-                        <span className="ghost-text animate-name-drift text-[15vw] sm:text-[14vw] lg:text-[13vw] leading-none">BILAL</span>
+                {/* Big ghost background name — continuous right-to-left ticker (stock-market style) */}
+                <div className="ticker-band absolute inset-0 flex items-center overflow-hidden pointer-events-none select-none" style={{ zIndex: 0 }}>
+                    <div className="flex items-center whitespace-nowrap animate-marquee">
+                        {[0, 1].map(g => (
+                            <div key={g} className="flex items-center shrink-0">
+                                {[0, 1].map(i => (
+                                    <span key={i} className="flex items-center">
+                                        <span className="ghost-text text-[16vw] lg:text-[13vw] leading-none px-[3vw]">HAMZA BILAL</span>
+                                        <span className="text-accent/25 text-[6vw] px-[1vw]">✦</span>
+                                    </span>
+                                ))}
+                            </div>
+                        ))}
                     </div>
                 </div>
 
