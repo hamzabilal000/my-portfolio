@@ -13,9 +13,10 @@ function CursorSmoke() {
     let lastRef = useRef({ x: 0, y: 0, t: 0 })
 
     useEffect(() => {
-        // Skip on touch devices and when the user prefers reduced motion
+        // Only bail for reduced-motion. (Don't test `hover: none` — it reports true on
+        // touchscreen-equipped desktops, which would wrongly disable the effect there.
+        // A real touch-only device simply never fires mousemove.)
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-        if (window.matchMedia('(hover: none)').matches) return
 
         let container = containerRef.current
         if (!container) return
