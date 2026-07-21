@@ -32,11 +32,12 @@ function Hero() {
                 onMouseLeave={resetMouse}
                 className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6"
             >
-                {/* Big ghost background name — parallax layer, drifts on its own too */}
-                <div data-depth="0.5" className="absolute inset-0 flex items-center justify-center pointer-events-none select-none transition-transform duration-300 ease-out" style={{ zIndex: 0 }}>
-                    <h2 className="ghost-text animate-name-drift text-[26vw] sm:text-[22vw] lg:text-[20vw] leading-none whitespace-nowrap">
-                        HAMZA
-                    </h2>
+                {/* Big ghost background name — split so the photo sits between two readable words */}
+                <div className="absolute inset-0 flex items-center pointer-events-none select-none" style={{ zIndex: 0 }}>
+                    <div data-depth="0.5" className="flex items-center justify-between w-full -mx-[6vw] transition-transform duration-300 ease-out">
+                        <span className="ghost-text animate-name-drift text-[15vw] sm:text-[14vw] lg:text-[13vw] leading-none">HAMZA</span>
+                        <span className="ghost-text animate-name-drift text-[15vw] sm:text-[14vw] lg:text-[13vw] leading-none">BILAL</span>
+                    </div>
                 </div>
 
                 {/* Floating shapes with parallax depth */}

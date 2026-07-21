@@ -18,8 +18,8 @@ function Projects() {
                 { name: 'MongoDB', icon: <SiMongodb /> },
                 { name: 'Socket.IO', icon: <SiSocketdotio /> },
             ],
-            github: null,
-            githubPrivate: true,
+            github: 'https://github.com/hamzabilal000/opssphere',
+            githubPrivate: false,
             live: null,
         },
         {

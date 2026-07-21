@@ -48,14 +48,20 @@ function Navbar() {
                 <div className="soft-card rounded-full flex items-center justify-between gap-2 pl-4 pr-2 py-2 backdrop-blur-xl"
                     style={{ background: 'rgb(var(--bg-card) / 0.85)' }}>
 
-                    {/* Logo — creative monogram + handle wordmark */}
-                    <button onClick={() => scrollTo('home')} className="flex items-center gap-2 group flex-shrink-0">
-                        <span className="relative w-8 h-8 rounded-[10px] flex items-center justify-center overflow-hidden group-hover:rotate-6 transition-transform duration-300"
+                    {/* Logo — designed monogram lockup with live status */}
+                    <button onClick={() => scrollTo('home')} className="flex items-center gap-2.5 group flex-shrink-0">
+                        <span className="relative w-9 h-9 rounded-[11px] flex items-center justify-center overflow-hidden shadow-md shadow-accent/25 group-hover:rotate-6 transition-transform duration-300"
                             style={{ background: 'linear-gradient(135deg, #f5471f 0%, #ff8a4d 50%, #5b4bf5 100%)' }}>
-                            <span className="text-white font-black text-[11px] tracking-tighter">HB</span>
+                            {/* glossy shine */}
+                            <span className="absolute inset-x-0 top-0 h-1/2 bg-white/25" />
+                            <span className="relative text-white font-black text-[12px] tracking-tighter">HB</span>
                         </span>
-                        <span className="hidden sm:flex items-baseline font-bold text-sm tracking-tight text-foreground">
-                            hamza<span className="text-accent mx-[1px]">.</span>bilal
+                        <span className="hidden sm:flex flex-col leading-none">
+                            <span className="font-extrabold text-[13px] tracking-tight text-foreground">HAMZA BILAL</span>
+                            <span className="flex items-center gap-1 mt-1">
+                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                <span className="text-[9px] font-semibold uppercase tracking-[0.15em] text-muted-fg">Available</span>
+                            </span>
                         </span>
                     </button>
 
