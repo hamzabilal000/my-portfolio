@@ -1,5 +1,38 @@
+import { useRef } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { SiFiverr } from 'react-icons/si'
+
+// Giant footer name — faint by default, lit up in orange/purple by a
+// soft spotlight that follows the cursor across the letters.
+function SpotlightName({ text }) {
+    let ref = useRef(null)
+    let fillRef = useRef(null)
+    let size = 'text-[22vw] sm:text-[20vw] lg:text-[16rem] leading-[0.8] whitespace-nowrap'
+
+    let handleMove = (e) => {
+        let el = ref.current
+        let fill = fillRef.current
+        if (!el || !fill) return
+        let r = el.getBoundingClientRect()
+        el.style.setProperty('--mx', `${e.clientX - r.left}px`)
+        el.style.setProperty('--my', `${e.clientY - r.top}px`)
+        fill.style.opacity = '1'
+    }
+
+    let handleLeave = () => {
+        if (fillRef.current) fillRef.current.style.opacity = '0'
+    }
+
+    return (
+        <div ref={ref}
+            onMouseMove={handleMove}
+            onMouseLeave={handleLeave}
+            className="spotlight-name relative w-full text-center select-none cursor-default">
+            <h2 className={`ghost-solid ${size}`}>{text}</h2>
+            <h2 ref={fillRef} aria-hidden="true" className={`spotlight-fill absolute inset-0 ${size}`}>{text}</h2>
+        </div>
+    )
+}
 
 function Footer() {
     let scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -75,9 +108,9 @@ function Footer() {
                     ))}
                 </div>
 
-                {/* Big ghost name */}
-                <div className="mt-12 text-center overflow-hidden">
-                    <h2 className="ghost-solid text-[22vw] sm:text-[20vw] lg:text-[16rem] leading-[0.8] whitespace-nowrap">HAMZA</h2>
+                {/* Big ghost name with cursor spotlight */}
+                <div className="mt-12 overflow-hidden">
+                    <SpotlightName text="HAMZA" />
                 </div>
 
                 <div className="text-center mt-4 pt-6 border-t border-theme-border/60">

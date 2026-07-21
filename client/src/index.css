@@ -253,6 +253,29 @@ body {
 }
 .animate-fade-up { animation: fadeUp 0.6s ease forwards; }
 
+/* ===== Footer name: cursor spotlight reveal ===== */
+.spotlight-name {
+    --mx: 50%;
+    --my: 50%;
+}
+.spotlight-fill {
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: transparent;
+    background: linear-gradient(95deg, #f5471f 0%, #ff8a4d 35%, #a78bfa 70%, #5b4bf5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* only visible inside a soft circle that follows the cursor */
+    -webkit-mask-image: radial-gradient(circle 190px at var(--mx) var(--my),
+        #000 0%, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 0) 72%);
+    mask-image: radial-gradient(circle 190px at var(--mx) var(--my),
+        #000 0%, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 0) 72%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+.spotlight-name:hover .spotlight-fill,
+.spotlight-name.is-active .spotlight-fill { opacity: 1; }
+
 /* ===== Cursor smoke trail ===== */
 .smoke-layer {
     position: fixed;
