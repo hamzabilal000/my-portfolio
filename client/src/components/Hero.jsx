@@ -48,35 +48,36 @@ function Hero() {
                     </div>
                 </div>
 
-                {/* Floating shapes with parallax depth — kept clear of the fixed navbar */}
+                {/* Floating shapes with parallax depth — all top-anchored so every one is
+                    always visible (no hover/scroll needed), and kept clear of the navbar pill */}
+                <div data-depth="0.7" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float-delay absolute top-6 left-[9%] sm:left-[12%]">
+                        <Shape type="cyl" size={58} c1="#60a5fa" c2="#2563eb" rotate={-8} />
+                    </div>
+                </div>
                 <div data-depth="0.9" className="transition-transform duration-300 ease-out">
-                    <div className="animate-float absolute top-16 left-[4%] sm:left-[8%]">
+                    <div className="animate-float absolute top-28 left-[3%] sm:left-[6%]">
                         <Shape type="pyramid" size={52} c1="#fb923c" c2="#ea580c" rotate={-12} />
                     </div>
                 </div>
                 <div data-depth="1.4" className="transition-transform duration-300 ease-out">
-                    <div className="animate-float-slow absolute top-48 left-[1%] sm:left-[4%]">
+                    <div className="animate-float-slow absolute top-60 left-[1%] sm:left-[3%]">
                         <Shape type="sphere" size={72} c1="#a78bfa" c2="#7c3aed" />
                     </div>
                 </div>
-                <div data-depth="0.7" className="transition-transform duration-300 ease-out">
-                    <div className="animate-float-delay absolute bottom-16 left-[8%] sm:left-[12%]">
-                        <Shape type="cyl" size={60} c1="#60a5fa" c2="#2563eb" rotate={-8} />
+                <div data-depth="1.5" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float-delay absolute top-6 right-[9%] sm:right-[12%]">
+                        <Shape type="diamond" size={52} c1="#fbbf24" c2="#d97706" />
                     </div>
                 </div>
                 <div data-depth="1.2" className="transition-transform duration-300 ease-out">
-                    <div className="animate-float absolute top-16 right-[4%] sm:right-[8%]">
+                    <div className="animate-float absolute top-28 right-[3%] sm:right-[6%]">
                         <Shape type="star" size={72} c1="#5eead4" c2="#14b8a6" rotate={8} />
                     </div>
                 </div>
                 <div data-depth="0.8" className="transition-transform duration-300 ease-out">
-                    <div className="animate-float-slow absolute top-48 right-[1%] sm:right-[4%]">
+                    <div className="animate-float-slow absolute top-60 right-[1%] sm:right-[3%]">
                         <Shape type="cube" size={64} c1="#bef264" c2="#65a30d" rotate={12} />
-                    </div>
-                </div>
-                <div data-depth="1.5" className="transition-transform duration-300 ease-out">
-                    <div className="animate-float-delay absolute bottom-12 right-[8%] sm:right-[12%]">
-                        <Shape type="diamond" size={52} c1="#fbbf24" c2="#d97706" />
                     </div>
                 </div>
 
