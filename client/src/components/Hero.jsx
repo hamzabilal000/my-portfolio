@@ -1,119 +1,121 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowRight } from 'react-icons/fa'
-import { SiFiverr } from 'react-icons/si'
-
-function ProfilePhoto() {
-    return (
-        <div className="relative flex items-center justify-center">
-            <div className="absolute -inset-10 bg-accent/8 rounded-3xl blur-3xl pointer-events-none" />
-
-            <div className="relative">
-                <div className="relative w-[260px] h-[320px] sm:w-[280px] sm:h-[350px] lg:w-[340px] lg:h-[420px] rounded-3xl overflow-hidden border border-accent/20 shadow-2xl shadow-accent/10">
-                    <img
-                        src="/hamza.png"
-                        alt="Hamza Bilal"
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: 'center 15%' }}
-                    />
-                </div>
-
-                <div className="absolute -top-5 -right-6 w-5 h-5 bg-accent rounded-full shadow-[0_0_12px_4px_rgba(34,197,94,0.5)] animate-pulse" />
-                <div className="absolute -bottom-5 -left-6 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_10px_3px_rgba(96,165,250,0.5)] animate-float" />
-                <div className="absolute top-1/2 -right-8 w-2.5 h-2.5 bg-purple-400 rounded-full shadow-[0_0_8px_3px_rgba(192,132,252,0.5)] animate-float-slow" />
-            </div>
-        </div>
-    )
-}
+import { useRef } from 'react'
+import { FaArrowRight } from 'react-icons/fa'
+import Shape from './Shape'
 
 function Hero() {
+    let sceneRef = useRef(null)
     let scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
+    // Mouse-move parallax — each layer moves by depth * mouse offset
+    let handleMouse = (e) => {
+        let scene = sceneRef.current
+        if (!scene) return
+        let rect = scene.getBoundingClientRect()
+        let x = (e.clientX - rect.left) / rect.width - 0.5
+        let y = (e.clientY - rect.top) / rect.height - 0.5
+        scene.querySelectorAll('[data-depth]').forEach(el => {
+            let d = parseFloat(el.dataset.depth)
+            el.style.transform = `translate3d(${x * d * 60}px, ${y * d * 60}px, 0)`
+        })
+    }
+    let resetMouse = () => {
+        let scene = sceneRef.current
+        if (!scene) return
+        scene.querySelectorAll('[data-depth]').forEach(el => { el.style.transform = '' })
+    }
+
     return (
-        <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-            <div className="absolute top-1/4 -left-40 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-accent/8 rounded-full blur-[140px] pointer-events-none animate-mesh" />
-            <div className="absolute bottom-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none animate-mesh" style={{ animationDelay: '5s' }} />
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16">
+            {/* Big ghost background name */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none px-4">
+                <h2 className="ghost-text text-[19vw] sm:text-[17vw] lg:text-[15vw] leading-none whitespace-nowrap">
+                    HAMZA
+                </h2>
+            </div>
 
-            <div className="absolute top-20 right-1/4 w-1.5 h-1.5 bg-accent/50 rounded-full animate-float hidden sm:block" />
-            <div className="absolute bottom-1/3 left-1/4 w-1 h-1 bg-accent/30 rounded-full animate-float-delay hidden sm:block" />
-            <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-blue-400/40 rounded-full animate-float-slow hidden sm:block" />
-            <div className="absolute top-1/2 left-1/3 w-1.5 h-1.5 bg-purple-400/30 rounded-full animate-float hidden md:block" style={{ animationDelay: '1s' }} />
-            <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-accent/20 rounded-full animate-float-slow hidden md:block" style={{ animationDelay: '3s' }} />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-16">
-                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-                    {/* Left */}
-                    <div className="space-y-6 lg:space-y-8 order-1">
-                        <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/25 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 animate-border-glow">
-                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                            <span className="text-accent text-xs sm:text-sm font-medium">Available for Opportunities</span>
-                        </div>
-
-                        <div className="space-y-1 sm:space-y-2">
-                            {['I Build', 'Digital', 'Experiences', 'With Code'].map((word, i) => (
-                                <h1 key={i} className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.08] tracking-tight">
-                                    {word === 'Digital'
-                                        ? <span className="shimmer-text">{word}</span>
-                                        : <span className="text-foreground">{word}</span>
-                                    }
-                                </h1>
-                            ))}
-                        </div>
-
-                        <p className="text-secondary-fg text-base sm:text-lg max-w-md leading-relaxed">
-                            Full-stack MERN developer and AI/ML engineer who ships
-                            production-grade systems end to end — from RESTful APIs
-                            to intelligent frontends.
-                        </p>
-
-                        <div className="flex flex-wrap gap-3">
-                            <a href="/HamzaBilal_CV.pdf" download
-                                className="btn-accent text-white font-semibold px-6 sm:px-7 py-3 sm:py-3.5 rounded-full flex items-center gap-2 group text-sm sm:text-base">
-                                Download CV
-                                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                            </a>
-                            <button onClick={() => scrollTo('contact')}
-                                className="border border-theme-border-light hover:border-accent/60 text-foreground font-semibold px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all hover:-translate-y-0.5 hover:bg-accent/5 text-sm sm:text-base">
-                                Get In Touch
-                            </button>
-                        </div>
-
-                        <div className="flex items-center gap-3 pt-1">
-                            <span className="text-faint-fg text-[10px] sm:text-xs uppercase tracking-widest whitespace-nowrap">Find me on</span>
-                            <div className="flex-1 h-px bg-theme-border min-w-0" />
-                            <div className="flex items-center gap-2">
-                                {[
-                                    { href: 'https://github.com/hamzabilal000', icon: <FaGithub size={16} /> },
-                                    { href: 'https://linkedin.com/in/hamzabilalcs', icon: <FaLinkedin size={16} /> },
-                                    { href: 'mailto:hamzabilal.cs.pk@gmail.com', icon: <FaEnvelope size={16} /> },
-                                    { href: 'https://fiverr.com/hamzabilal000', icon: <SiFiverr size={16} /> },
-                                ].map((link, i) => (
-                                    <a key={i} href={link.href}
-                                        target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                                        rel="noreferrer"
-                                        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-theme-border hover:border-accent/60 hover:bg-accent/10 flex items-center justify-center text-muted-fg hover:text-accent transition-all hover:-translate-y-1 duration-300">
-                                        {link.icon}
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
+            <div
+                ref={sceneRef}
+                onMouseMove={handleMouse}
+                onMouseLeave={resetMouse}
+                className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6"
+            >
+                {/* Floating shapes with parallax depth */}
+                <div data-depth="0.9" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float absolute -top-4 left-[6%] sm:left-[10%]">
+                        <Shape type="pyramid" size={58} c1="#fb923c" c2="#ea580c" rotate={-12} />
                     </div>
-
-                    {/* Profile Photo */}
-                    <div className="order-2 flex justify-center">
-                        <div className="scale-75 sm:scale-90 lg:scale-100">
-                            <ProfilePhoto />
-                        </div>
+                </div>
+                <div data-depth="1.4" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float-slow absolute top-24 left-[2%] sm:left-[6%]">
+                        <Shape type="sphere" size={78} c1="#a78bfa" c2="#7c3aed" />
+                    </div>
+                </div>
+                <div data-depth="0.7" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float-delay absolute bottom-20 left-[10%] sm:left-[14%]">
+                        <Shape type="cyl" size={62} c1="#60a5fa" c2="#2563eb" rotate={-8} />
+                    </div>
+                </div>
+                <div data-depth="1.2" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float absolute -top-2 right-[6%] sm:right-[10%]">
+                        <Shape type="star" size={80} c1="#5eead4" c2="#14b8a6" rotate={8} />
+                    </div>
+                </div>
+                <div data-depth="0.8" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float-slow absolute top-28 right-[1%] sm:right-[5%]">
+                        <Shape type="cube" size={70} c1="#bef264" c2="#65a30d" rotate={12} />
+                    </div>
+                </div>
+                <div data-depth="1.5" className="transition-transform duration-300 ease-out">
+                    <div className="animate-float-delay absolute bottom-16 right-[9%] sm:right-[13%]">
+                        <Shape type="diamond" size={54} c1="#fbbf24" c2="#d97706" />
                     </div>
                 </div>
 
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-3 mt-10 lg:mt-14 max-w-lg mx-auto lg:max-w-none lg:mx-0">
-                    {[{ value: '5+', label: 'Projects' }, { value: '10+', label: 'Technologies' }, { value: 'MERN', label: 'Specialist' }].map((s, i) => (
-                        <div key={i} className="glass rounded-xl p-3 text-center border border-theme-border card-hover">
-                            <div className="text-accent font-bold text-sm sm:text-base">{s.value}</div>
-                            <div className="text-muted-fg text-[10px] sm:text-[11px] mt-0.5">{s.label}</div>
+                {/* Center content */}
+                <div className="relative flex flex-col items-center text-center">
+                    <p className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+                        Hi, I'm <span className="font-display italic text-accent">Hamza</span>!
+                    </p>
+                    <p className="mt-2 text-muted-fg text-sm sm:text-base font-medium uppercase tracking-[0.2em]">
+                        MERN + AI Engineer
+                    </p>
+
+                    {/* Photo */}
+                    <div data-depth="0.35" className="transition-transform duration-300 ease-out mt-8">
+                        <div className="relative w-52 h-60 sm:w-60 sm:h-72 rounded-[2rem] overflow-hidden shadow-2xl"
+                            style={{ background: 'linear-gradient(160deg, #f5471f, #ff7a4d)' }}>
+                            <img
+                                src="/hamza.png"
+                                alt="Hamza Bilal"
+                                className="w-full h-full object-cover"
+                                style={{ objectPosition: 'center 15%' }}
+                            />
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Happy clients */}
+                    <div className="mt-6 flex items-center gap-3">
+                        <div className="flex -space-x-2">
+                            {['#f97316', '#8b5cf6', '#14b8a6', '#3b82f6'].map((c, i) => (
+                                <span key={i} className="w-7 h-7 rounded-full border-2 border-[rgb(var(--bg-primary))]"
+                                    style={{ background: c }} />
+                            ))}
+                        </div>
+                        <span className="text-secondary-fg text-sm font-medium">5+ Projects Delivered</span>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+                        <button onClick={() => scrollTo('contact')}
+                            className="btn-accent font-semibold px-7 py-3.5 rounded-full flex items-center gap-2 group text-sm sm:text-base">
+                            Let's Work Together!
+                            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                        <a href="/HamzaBilal_CV.pdf" download
+                            className="btn-outline font-semibold px-7 py-3.5 rounded-full text-sm sm:text-base">
+                            Download CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
