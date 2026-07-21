@@ -62,9 +62,9 @@ function Footer() {
     return (
         <footer className="relative border-t border-theme-border pt-16 pb-8 overflow-hidden">
             <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-                    {/* Brand */}
-                    <div className="lg:col-span-2">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 relative z-10">
+                    {/* Brand — full width on phones, half the row on desktop */}
+                    <div className="col-span-2">
                         <div className="flex items-center gap-2">
                             <span className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white font-black text-xs"
                                 style={{ background: 'linear-gradient(135deg, #f5471f 0%, #ff8a4d 50%, #5b4bf5 100%)' }}>HB</span>
@@ -95,13 +95,13 @@ function Footer() {
                     {cols.map((col, i) => (
                         <div key={i}>
                             <div className="text-foreground font-bold text-sm mb-4">{col.title}</div>
-                            <div className="flex flex-col gap-0.5 sm:gap-2">
+                            <div className="flex flex-col gap-0.5 sm:gap-1.5">
                                 {col.links.map((l, j) => (
                                     l.href
                                         ? <a key={j} href={l.href} target={l.href.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer"
-                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left py-2.5 sm:py-0.5">{l.label}</a>
+                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left py-1.5 sm:py-0.5">{l.label}</a>
                                         : <button key={j} onClick={l.action}
-                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left py-2.5 sm:py-0.5">{l.label}</button>
+                                            className="text-secondary-fg hover:text-accent transition-colors text-sm text-left py-1.5 sm:py-0.5">{l.label}</button>
                                 ))}
                             </div>
                         </div>
