@@ -56,12 +56,9 @@ function Navbar() {
                             <span className="absolute inset-x-0 top-0 h-1/2 bg-white/25" />
                             <span className="relative text-white font-black text-[12px] tracking-tighter">HB</span>
                         </span>
-                        <span className="hidden sm:flex flex-col leading-none">
-                            <span className="font-extrabold text-[13px] tracking-tight text-foreground">HAMZA BILAL</span>
-                            <span className="flex items-center gap-1 mt-1">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                <span className="text-[9px] font-semibold uppercase tracking-[0.15em] text-muted-fg">Available</span>
-                            </span>
+                        <span className="hidden sm:flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-fg">Available</span>
                         </span>
                     </button>
 

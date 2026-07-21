@@ -39,7 +39,7 @@ function Hero() {
                             <div key={g} className="flex items-center shrink-0">
                                 {[0, 1, 2, 3].map(i => (
                                     <span key={i} className="flex items-center">
-                                        <span className="ghost-text text-[8vw] sm:text-[6.5vw] lg:text-[5.5vw] leading-none px-[2vw]">HAMZA BILAL</span>
+                                        <span className="ticker-name text-[13vw] sm:text-[10vw] lg:text-[8vw] leading-none px-[2vw]">HAMZA BILAL</span>
                                         <span className="text-accent/25 text-[3vw] px-[0.5vw]">✦</span>
                                     </span>
                                 ))}

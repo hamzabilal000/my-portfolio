@@ -33,7 +33,8 @@ function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-2">
-                            <span className="w-9 h-9 rounded-full bg-accent flex items-center justify-center text-white font-black text-xs">HB</span>
+                            <span className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white font-black text-xs"
+                                style={{ background: 'linear-gradient(135deg, #f5471f 0%, #ff8a4d 50%, #5b4bf5 100%)' }}>HB</span>
                             <div>
                                 <div className="text-foreground font-bold text-sm">Hamza Bilal</div>
                                 <div className="text-faint-fg text-[10px] uppercase tracking-wider">MERN + AI Engineer</div>
