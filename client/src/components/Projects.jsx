@@ -1,9 +1,27 @@
 import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa'
-import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss, SiPython, SiFastapi } from 'react-icons/si'
+import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss, SiPython, SiFastapi, SiTypescript, SiSocketdotio } from 'react-icons/si'
 import Shape from './Shape'
 
 function Projects() {
     let projects = [
+        {
+            id: 'opssphere',
+            title: 'OpsSphere',
+            subtitle: 'Multi-Tenant Ops Platform',
+            description: 'A multi-tenant enterprise operations platform — a TypeScript MERN monorepo with strict per-organization data isolation, RBAC permissions, projects/tasks Kanban, sprints, tickets, a risk register, real-time Socket.IO updates, S3 file storage, Redis-backed rate limiting, and notifications.',
+            gradient: 'linear-gradient(150deg, #0f766e, #1e3a8a)',
+            emoji: '🌐',
+            tech: [
+                { name: 'TypeScript', icon: <SiTypescript /> },
+                { name: 'React', icon: <SiReact /> },
+                { name: 'Node.js', icon: <SiNodedotjs /> },
+                { name: 'MongoDB', icon: <SiMongodb /> },
+                { name: 'Socket.IO', icon: <SiSocketdotio /> },
+            ],
+            github: null,
+            githubPrivate: true,
+            live: null,
+        },
         {
             id: 'greenvault',
             title: 'GreenVault',
@@ -89,10 +107,12 @@ function Projects() {
                                             <FaGithub /> GitHub
                                         </a>
                                     )}
-                                    <a href={p.live} target="_blank" rel="noreferrer"
-                                        className="btn-accent flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium">
-                                        <FaExternalLinkAlt size={12} /> Live Demo
-                                    </a>
+                                    {p.live && (
+                                        <a href={p.live} target="_blank" rel="noreferrer"
+                                            className="btn-accent flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium">
+                                            <FaExternalLinkAlt size={12} /> Live Demo
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>

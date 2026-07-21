@@ -48,10 +48,15 @@ function Navbar() {
                 <div className="soft-card rounded-full flex items-center justify-between gap-2 pl-4 pr-2 py-2 backdrop-blur-xl"
                     style={{ background: 'rgb(var(--bg-card) / 0.85)' }}>
 
-                    {/* Logo */}
+                    {/* Logo — creative monogram + handle wordmark */}
                     <button onClick={() => scrollTo('home')} className="flex items-center gap-2 group flex-shrink-0">
-                        <span className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-black text-xs group-hover:scale-105 transition-transform">HB</span>
-                        <span className="hidden sm:block text-foreground font-bold text-sm">Hamza</span>
+                        <span className="relative w-8 h-8 rounded-[10px] flex items-center justify-center overflow-hidden group-hover:rotate-6 transition-transform duration-300"
+                            style={{ background: 'linear-gradient(135deg, #f5471f 0%, #ff8a4d 50%, #5b4bf5 100%)' }}>
+                            <span className="text-white font-black text-[11px] tracking-tighter">HB</span>
+                        </span>
+                        <span className="hidden sm:flex items-baseline font-bold text-sm tracking-tight text-foreground">
+                            hamza<span className="text-accent mx-[1px]">.</span>bilal
+                        </span>
                     </button>
 
                     {/* Desktop links */}

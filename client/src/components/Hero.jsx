@@ -26,19 +26,19 @@ function Hero() {
 
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16">
-            {/* Big ghost background name */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none px-4">
-                <h2 className="ghost-text text-[19vw] sm:text-[17vw] lg:text-[15vw] leading-none whitespace-nowrap">
-                    HAMZA
-                </h2>
-            </div>
-
             <div
                 ref={sceneRef}
                 onMouseMove={handleMouse}
                 onMouseLeave={resetMouse}
                 className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6"
             >
+                {/* Big ghost background name — parallax layer, drifts on its own too */}
+                <div data-depth="0.5" className="absolute inset-0 flex items-center justify-center pointer-events-none select-none transition-transform duration-300 ease-out" style={{ zIndex: 0 }}>
+                    <h2 className="ghost-text animate-name-drift text-[26vw] sm:text-[22vw] lg:text-[20vw] leading-none whitespace-nowrap">
+                        HAMZA
+                    </h2>
+                </div>
+
                 {/* Floating shapes with parallax depth */}
                 <div data-depth="0.9" className="transition-transform duration-300 ease-out">
                     <div className="animate-float absolute -top-4 left-[6%] sm:left-[10%]">
@@ -72,7 +72,7 @@ function Hero() {
                 </div>
 
                 {/* Center content */}
-                <div className="relative flex flex-col items-center text-center">
+                <div className="relative z-20 flex flex-col items-center text-center">
                     <p className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                         Hi, I'm <span className="font-display italic text-accent">Hamza</span>!
                     </p>

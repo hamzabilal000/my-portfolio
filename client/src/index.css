@@ -207,6 +207,13 @@ body {
     to { transform: rotate(360deg); }
 }
 
+/* Slow horizontal drift for the big ghost name */
+@keyframes nameDrift {
+    0%, 100% { transform: translateX(-2%); }
+    50% { transform: translateX(2%); }
+}
+.animate-name-drift { animation: nameDrift 10s ease-in-out infinite; }
+
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
