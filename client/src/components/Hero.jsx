@@ -37,10 +37,10 @@ function Hero() {
                     <div className="flex items-center whitespace-nowrap animate-marquee">
                         {[0, 1].map(g => (
                             <div key={g} className="flex items-center shrink-0">
-                                {[0, 1].map(i => (
+                                {[0, 1, 2, 3].map(i => (
                                     <span key={i} className="flex items-center">
-                                        <span className="ghost-text text-[16vw] lg:text-[13vw] leading-none px-[3vw]">HAMZA BILAL</span>
-                                        <span className="text-accent/25 text-[6vw] px-[1vw]">✦</span>
+                                        <span className="ghost-text text-[8vw] sm:text-[6.5vw] lg:text-[5.5vw] leading-none px-[2vw]">HAMZA BILAL</span>
+                                        <span className="text-accent/25 text-[3vw] px-[0.5vw]">✦</span>
                                     </span>
                                 ))}
                             </div>
